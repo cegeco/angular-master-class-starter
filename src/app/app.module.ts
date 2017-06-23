@@ -5,8 +5,10 @@ import { MaterialModule } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { ContactsAppComponent } from './app.component';
+import { ContactsService } from './contacts.service';
 
 @NgModule({
+  providers: [ContactsService],
   declarations: [ContactsAppComponent],
   imports: [
     BrowserModule,
