@@ -13,4 +13,8 @@ export class ContactsService {
     return this.contacts;
   }
 
+  getContact(id:String) {
+    return this.contacts.find(contact => contact.id.toString() === id);
+  }
+
 }

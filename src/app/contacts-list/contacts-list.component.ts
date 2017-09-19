@@ -9,15 +9,19 @@ import { ContactsService } from '../contacts.service';
 })
 export class ContactsListComponent implements OnInit {
 
-  private contacts:Contact[];
+  private contacts: Contact[];
   private contactsService: ContactsService;
 
-  constructor(contactsService:ContactsService) {
-    this.contactsService=contactsService;
+  constructor(contactsService: ContactsService) {
+    this.contactsService = contactsService;
   }
 
   ngOnInit(): void {
-    this.contacts=this.contactsService.getContacts();
+    this.contacts = this.contactsService.getContacts();
+  }
+
+  trackById(index: number, contact: Contact): string | number {
+    return contact.id;
   }
 
 }
