@@ -10,14 +10,16 @@ import { ContactsService } from '../contacts.service';
 export class ContactsListComponent implements OnInit {
 
   private contacts: Contact[];
-  private contactsService: ContactsService;
 
-  constructor(contactsService: ContactsService) {
-    this.contactsService = contactsService;
+  constructor(private contactsService: ContactsService) {
   }
 
   ngOnInit(): void {
-    this.contacts = this.contactsService.getContacts();
+    this.contactsService
+      .getContacts()
+      .subscribe(contacts => {
+        this.contacts = contacts;
+      });
   }
 
   trackById(index: number, contact: Contact): string | number {
