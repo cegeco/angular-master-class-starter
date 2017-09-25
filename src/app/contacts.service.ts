@@ -14,14 +14,19 @@ export class ContactsService {
 
   getContacts(): Observable<Array<Contact>> {
     return this.http
-      .get<ContactsResponse>(this.apiEndpoint + '/api/contacts')
+      .get<ContactsResponse>(`${this.apiEndpoint}/contacts`)
       .map(data => data.items);    
   }
 
-  getContact(id:String) {
+  getContact(id: String): Observable<Contact> {
     return this.http
-      .get<ContactResponse>(this.apiEndpoint + '/api/contacts/' + id)
+      .get<ContactResponse>(`${this.apiEndpoint}/contacts/${id}`)
       .map(data => data.item);
+  }
+
+  updateContact(contact: Contact): Observable<Object> {
+    return this.http
+      .put(`${this.apiEndpoint}/contacts/${contact.id}`, contact);
   }
 
 }

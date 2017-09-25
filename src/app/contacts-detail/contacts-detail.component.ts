@@ -10,7 +10,7 @@ import { Contact } from '../models/contact';
 })
 export class ContactsDetailComponent implements OnInit {
 
-  private contact:Contact;
+  private contact: Contact = <Contact>{ address: {}};
 
   constructor(private route: ActivatedRoute, private contactsService: ContactsService) {
   }

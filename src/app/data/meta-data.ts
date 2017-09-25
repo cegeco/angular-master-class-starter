@@ -1,1 +1,1 @@
-export const API_ENDPOINT: string = 'http://localhost:4201';
+export const API_ENDPOINT: string = 'http://localhost:4201/api';
