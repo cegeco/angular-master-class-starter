@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Contact } from './models/contact';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs/Rx';
+import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
 interface ContactResponse { item : Contact };
